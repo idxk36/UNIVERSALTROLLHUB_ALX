@@ -1,0 +1,136 @@
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local win = DiscordLib:Window("ALX | idxk_36")
+local serv = win:Server("TROLL HUB", "Niggers")
+
+local btns = serv:Channel("ESP")
+
+local btns1 = serv:Channel("INVISIBLE")
+
+local btns2 = serv:Channel("OTHERS")
+
+
+
+
+btns:Button("ESP", function()
+DiscordLib:Notification("SYSTEM", "Executed script!", "Ok nigger")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local function addHighlight(character)
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart", 10)
+    if humanoidRootPart and not humanoidRootPart:FindFirstChild("Highlight") then
+        local highlight = Instance.new("Highlight")
+        highlight.Adornee = character
+        highlight.Parent = humanoidRootPart
+        highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        highlight.Name = "Highlight"
+    end
+end
+
+
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        addHighlight(character)
+    end)
+end)
+
+
+for _, player in ipairs(Players:GetPlayers()) do
+    if player.Character then
+        addHighlight(player.Character)
+    end
+end
+
+Players.PlayerRemoving:Connect(function(player)
+    if player.Character then
+        local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
+        if humanoidRootPart and humanoidRootPart:FindFirstChild("Highlight") then
+            humanoidRootPart.Highlight:Destroy()
+        end
+    end
+end)
+
+RunService.Heartbeat:Connect(function()
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player.Character and not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+            addHighlight(player.Character)
+        end
+    end
+end)
+
+
+end)
+
+btns:Button("ESP SUPPORTER (HIGHLY RECOMMENDED)", function()
+DiscordLib:Notification("SYSTEM", "Executed script!", "Ok nigger")
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local function addHighlight(character)
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart", 10)
+    if humanoidRootPart and not humanoidRootPart:FindFirstChild("Highlight") then
+        local highlight = Instance.new("Highlight")
+        highlight.Adornee = character
+        highlight.Parent = humanoidRootPart
+        highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        highlight.Name = "Highlight"
+    end
+end
+
+
+
+
+
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        addHighlight(character)
+    end)
+end)
+
+
+for _, player in ipairs(Players:GetPlayers()) do
+    if player.Character then
+        addHighlight(player.Character)
+    end
+end
+
+
+Players.PlayerRemoving:Connect(function(player)
+    if player.Character then
+        local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
+        if humanoidRootPart and humanoidRootPart:FindFirstChild("Highlight") then
+            humanoidRootPart.Highlight:Destroy()
+        end
+    end
+end)
+
+
+RunService.Heartbeat:Connect(function()
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player.Character and not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+            addHighlight(player.Character)
+        end
+    end
+end)
+wait(5)
+DiscordLib:Notification("SYSTEM", "Esp supporter made by me :)", "OK NIGGER I DONT CARE!")
+
+
+end)
+
+
+btns1:Button("INVISIBLE", function()
+DiscordLib:Notification("SYSTEM", "Executed script!", "Ok nigger")
+
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-fe-invisible-4366"))()
+
+end)
+
+btns2:Button("INFINITE YIELD", function()
+DiscordLib:Notification("SYSTEM", "Executed script", "Ok nigger")
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end)
+
+btns1:Label("KEYBIND: E")
